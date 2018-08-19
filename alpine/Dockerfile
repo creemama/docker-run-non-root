@@ -13,7 +13,7 @@ ADD https://github.com/krallin/tini/releases/download/v0.18.0/tini-static /usr/l
 RUN chmod +x /usr/local/bin/tini
 
 # Install run-non-root.
-ADD https://raw.githubusercontent.com/creemama/run-non-root/v0.0.0/run-non-root.sh /usr/local/bin/run-non-root
+ADD https://raw.githubusercontent.com/creemama/run-non-root/v1.0.0/run-non-root.sh /usr/local/bin/run-non-root
 RUN chmod +x /usr/local/bin/run-non-root
 
 ENTRYPOINT ["run-non-root"]
