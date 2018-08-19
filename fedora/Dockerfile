@@ -32,4 +32,3 @@ RUN chmod +x /usr/local/bin/run-non-root
 RUN dnf install -y procps-ng
 
 ENTRYPOINT ["run-non-root"]
-CMD ["--help"]

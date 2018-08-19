@@ -29,4 +29,3 @@ ADD https://raw.githubusercontent.com/creemama/run-non-root/v0.0.0/run-non-root.
 RUN chmod +x /usr/local/bin/run-non-root
 
 ENTRYPOINT ["run-non-root"]
-CMD ["--help"]

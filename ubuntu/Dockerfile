@@ -35,4 +35,3 @@ RUN apt-get update \
  && rm -rf /var/lib/apt/lists/*
 
 ENTRYPOINT ["run-non-root"]
-CMD ["--help"]
