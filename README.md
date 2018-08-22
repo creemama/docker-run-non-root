@@ -2,11 +2,7 @@
 
 > Run Linux commands as a non-root user, creating a non-root user if necessary.
 
-<p>
-  <a href="https://travis-ci.org/creemama/run-non-root"><img alt="Travis CI Build Status" src="https://img.shields.io/travis/creemama/run-non-root/master.svg?style=flat-square&label=Travis+CI"></a>
-  <a href="https://github.com/creemama/docker-run-non-root"><img alt="run-non-root Version" src="https://img.shields.io/github/tag/creemama/run-non-root.svg?style=flat-square"></a>
-  <a href="https://hub.docker.com/r/creemama/run-non-root/"><img alt="run-non-root Version" src="https://img.shields.io/docker/automated/jrottenberg/ffmpeg.svg?style=flat-square"></a>
-</p>
+[![Travis CI Build Status](https://img.shields.io/travis/creemama/run-non-root/master.svg?style=flat-square&label=Travis+CI)](https://travis-ci.org/creemama/run-non-root) [![run-non-root Version](https://img.shields.io/github/tag/creemama/run-non-root.svg?style=flat-square)](https://github.com/creemama/docker-run-non-root) [![run-non-root on Docker Hub](https://img.shields.io/docker/automated/jrottenberg/ffmpeg.svg?style=flat-square)](https://hub.docker.com/r/creemama/run-non-root/)
 
 This allows us to
 
