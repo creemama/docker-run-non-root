@@ -1,8 +1,10 @@
 # run-non-root
 
-> Run Linux commands as a non-root user, creating a non-root user if necessary.
+> Run Docker containers as a non-root user by default.
 
 [![Travis CI Build Status](https://img.shields.io/travis/creemama/run-non-root/master.svg?style=flat-square&label=Travis+CI)](https://travis-ci.org/creemama/run-non-root) [![run-non-root Version](https://img.shields.io/github/tag/creemama/run-non-root.svg?style=flat-square)](https://github.com/creemama/docker-run-non-root) [![run-non-root on Docker Hub](https://img.shields.io/docker/automated/jrottenberg/ffmpeg.svg?style=flat-square)](https://hub.docker.com/r/creemama/run-non-root/)
+
+`run-non-root` runs Linux commands as a non-root user, creating a non-root user if necessary.
 
 This allows us to
 
@@ -12,11 +14,11 @@ without having to specify a `USER` with hardcoded UIDs and GIDs in our Dockerfil
 
 # Supported tags and respective `Dockerfile` links
 
- * [`1.0.0`, `latest` *(alpine/Dockerfile)*](https://github.com/creemama/docker-run-non-root/blob/1.0.0/alpine/Dockerfile)
- * [`1.0.0` *(centos/Dockerfile)*](https://github.com/creemama/docker-run-non-root/blob/1.0.0/centos/Dockerfile)
- * [`1.0.0` *(debian/Dockerfile)*](https://github.com/creemama/docker-run-non-root/blob/1.0.0/debian/Dockerfile)
- * [`1.0.0` *(fedora/Dockerfile)*](https://github.com/creemama/docker-run-non-root/blob/1.0.0/fedora/Dockerfile)
- * [`1.0.0` *(ubuntu/Dockerfile)*](https://github.com/creemama/docker-run-non-root/blob/1.0.0/ubuntu/Dockerfile)
+ * [`1.0.0-alpine`, `latest` *(alpine/Dockerfile)*](https://github.com/creemama/docker-run-non-root/blob/1.0.0/alpine/Dockerfile)
+ * [`1.0.0-centos` *(centos/Dockerfile)*](https://github.com/creemama/docker-run-non-root/blob/1.0.0/centos/Dockerfile)
+ * [`1.0.0-debian` *(debian/Dockerfile)*](https://github.com/creemama/docker-run-non-root/blob/1.0.0/debian/Dockerfile)
+ * [`1.0.0-fedora` *(fedora/Dockerfile)*](https://github.com/creemama/docker-run-non-root/blob/1.0.0/fedora/Dockerfile)
+ * [`1.0.0-ubuntu` *(ubuntu/Dockerfile)*](https://github.com/creemama/docker-run-non-root/blob/1.0.0/ubuntu/Dockerfile)
 
 # run-non-root
 
