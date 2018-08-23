@@ -37,8 +37,8 @@ Options:
                           default group name is USERNAME or nonroot; this
                           option is ignored if we are already running as a
                           non-root user or if the GID already exists; this
-                          option overrides the RUN_NON_ROOT_GROUP_NAME
-                          environment variable.
+                          option overrides the RUN_NON_ROOT_GROUP environment
+                          variable.
   -g, --gid GID           The group ID to use when executing the command; the
                           default GID is UID or a new ID determined by
                           groupadd; this option is ignored if we are already
@@ -55,7 +55,7 @@ Options:
                           default is nonroot; this option is ignored if we are
                           already running as a non-root user or if the UID
                           already exists; this option overrides the
-                          RUN_NON_ROOT_USERNAME environment variable.
+                          RUN_NON_ROOT_USER environment variable.
   -u, --uid UID           The user ID to use when executing the command; the
                           default UID is GID or a new ID determined by
                           useraddd; this option is ignored if we are already
@@ -88,9 +88,9 @@ Examples:
   # Run id as a non-root user using environment variables
   # and the given user specification.
   export RUN_NON_ROOT_GID=1000
-  export RUN_NON_ROOT_GROUP_NAME=ec2-user
+  export RUN_NON_ROOT_GROUP=ec2-user
   export RUN_NON_ROOT_UID=1000
-  export RUN_NON_ROOT_USERNAME=ec2-user
+  export RUN_NON_ROOT_USER=ec2-user
   run-non-root -- id
 ```
 
@@ -114,9 +114,9 @@ docker run -it --rm creemama/run-non-root:latest \
 # and the given user specification.
 docker run \
   -e RUN_NON_ROOT_GID=1000 \
-  -e RUN_NON_ROOT_GROUP_NAME=ec2-user \
+  -e RUN_NON_ROOT_GROUP=ec2-user \
   -e RUN_NON_ROOT_UID=1000 \
-  -e RUN_NON_ROOT_USERNAME=ec2-user \
+  -e RUN_NON_ROOT_USER=ec2-user \
   -it --rm creemama/run-non-root:latest \
   -q -- id
 # Output: uid=1000(ec2-user) gid=1000(ec2-user) groups=1000(ec2-user)
