@@ -1,6 +1,6 @@
 # run-non-root
 
-> Run Docker containers as a non-root user by default.
+> Run Docker containers with a non-root user by default.
 
 [![Travis CI Build Status](https://img.shields.io/travis/creemama/run-non-root/master.svg?style=flat-square&label=Travis+CI)](https://travis-ci.org/creemama/run-non-root) [![run-non-root Version](https://img.shields.io/github/tag/creemama/run-non-root.svg?style=flat-square)](https://github.com/creemama/docker-run-non-root) [![run-non-root on Docker Hub](https://img.shields.io/docker/automated/jrottenberg/ffmpeg.svg?style=flat-square)](https://hub.docker.com/r/creemama/run-non-root/)
 
@@ -99,6 +99,7 @@ Examples:
 ```sh
 # Run sh as a non-root user.
 docker run -it --rm creemama/run-non-root:latest
+# Output: Running ( su-exec nonroot:1000 sh ) as uid=1000(nonroot) gid=1000(nonroot) groups=1000(nonroot) ...
 
 # Run id as a non-root user.
 docker run -it --rm creemama/run-non-root:latest --q -- id
