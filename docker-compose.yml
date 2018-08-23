@@ -5,28 +5,28 @@ services:
       context: ./alpine
     command: 'ps aux'
     container_name: 'run-non-root-alpine'
-    image: 'creemama/run-non-root:1.0.0-alpine'
+    image: 'creemama/run-non-root:1.0.1-alpine'
   centos:
     build:
       context: ./centos
     command: 'ps aux'
     container_name: 'run-non-root-centos'
-    image: 'creemama/run-non-root:1.0.0-centos'
+    image: 'creemama/run-non-root:1.0.1-centos'
   fedora:
     build:
       context: ./fedora
     command: 'ps aux'
     container_name: 'run-non-root-fedora'
-    image: 'creemama/run-non-root:1.0.0-fedora'
+    image: 'creemama/run-non-root:1.0.1-fedora'
   debian:
     build:
       context: ./debian
     command: 'ps aux'
     container_name: 'run-non-root-debian'
-    image: 'creemama/run-non-root:1.0.0-debian'
+    image: 'creemama/run-non-root:1.0.1-debian'
   ubuntu:
     build:
       context: ./ubuntu
     command: 'ps aux'
     container_name: 'run-non-root-ubuntu'
-    image: 'creemama/run-non-root:1.0.0-ubuntu'
+    image: 'creemama/run-non-root:1.0.1-ubuntu'
