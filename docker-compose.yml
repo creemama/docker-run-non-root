@@ -12,6 +12,27 @@ services:
     command: 'ps aux'
     container_name: 'run-non-root-centos'
     image: 'creemama/run-non-root:1.0.1-centos'
+  certbot:
+    build:
+      context: ./certbot
+    command: '-- certbot --help'
+    container_name: 'run-non-root-certbot'
+    environment:
+      - RUN_NON_ROOT_GID=${RUN_NON_ROOT_GID-}
+      - RUN_NON_ROOT_UID=${RUN_NON_ROOT_UID-}
+    image: 'creemama/run-non-root:1.0.1-certbot'
+    volumes:
+      - "${LETS_ENCRYPT_PATH-}:/etc/letsencrypt"
+  certbot-renew-cron:
+    build:
+      context: ./certbot-renew-cron
+    container_name: 'run-non-root-certbot-renew-cron'
+    image: 'creemama/run-non-root:1.0.1-certbot-renew-cron'
+    environment:
+      - RUN_NON_ROOT_GID=${RUN_NON_ROOT_GID-}
+      - RUN_NON_ROOT_UID=${RUN_NON_ROOT_UID-}
+    volumes:
+      - "${LETS_ENCRYPT_PATH-}:/etc/letsencrypt"
   fedora:
     build:
       context: ./fedora
@@ -24,6 +45,14 @@ services:
     command: 'ps aux'
     container_name: 'run-non-root-debian'
     image: 'creemama/run-non-root:1.0.1-debian'
+  node:
+    build:
+      context: ./node
+    container_name: 'run-non-root-node'
+    environment:
+      - RUN_NON_ROOT_GID=${RUN_NON_ROOT_GID-}
+      - RUN_NON_ROOT_UID=${RUN_NON_ROOT_UID-}
+    image: 'creemama/run-non-root:1.0.1-node'
   ubuntu:
     build:
       context: ./ubuntu

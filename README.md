@@ -20,6 +20,12 @@ without having to specify a `USER` with hardcoded UIDs and GIDs in our Dockerfil
  * [`1.0.1-fedora`, `1.0-fedora`, `1-fedora`, `fedora` *(fedora/Dockerfile)*](https://github.com/creemama/docker-run-non-root/blob/1.0.1/fedora/Dockerfile)
  * [`1.0.1-ubuntu`, `1.0-ubuntu`, `1-ubuntu`, `ubuntu` *(ubuntu/Dockerfile)*](https://github.com/creemama/docker-run-non-root/blob/1.0.1/ubuntu/Dockerfile)
 
+**Examples**
+
+ * [`1.0-certbot` *(certbot/Dockerfile)*](https://github.com/creemama/docker-run-non-root/blob/1.0/certbot/Dockerfile)
+ * [`1.0-certbot-renew-cron` *(certbot-renew-cron/Dockerfile)*](https://github.com/creemama/docker-run-non-root/blob/1.0/certbot-renew-cron/Dockerfile)
+ * [`1.0-node` *(node/Dockerfile)*](https://github.com/creemama/docker-run-non-root/blob/1.0/node/Dockerfile)
+
 # run-non-root
 
 [run-non-root](https://github.com/creemama/run-non-root) is a shell script that runs Linux commands as a non-root user.
