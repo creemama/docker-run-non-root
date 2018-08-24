@@ -14,11 +14,11 @@ without having to specify a `USER` with hardcoded UIDs and GIDs in our Dockerfil
 
 # Supported tags and respective `Dockerfile` links
 
- * [`1.0.1-alpine`, `latest` *(alpine/Dockerfile)*](https://github.com/creemama/docker-run-non-root/blob/1.0.1/alpine/Dockerfile)
- * [`1.0.1-centos` *(centos/Dockerfile)*](https://github.com/creemama/docker-run-non-root/blob/1.0.1/centos/Dockerfile)
- * [`1.0.1-debian` *(debian/Dockerfile)*](https://github.com/creemama/docker-run-non-root/blob/1.0.1/debian/Dockerfile)
- * [`1.0.1-fedora` *(fedora/Dockerfile)*](https://github.com/creemama/docker-run-non-root/blob/1.0.1/fedora/Dockerfile)
- * [`1.0.1-ubuntu` *(ubuntu/Dockerfile)*](https://github.com/creemama/docker-run-non-root/blob/1.0.1/ubuntu/Dockerfile)
+ * [`1.0.1-alpine`, `1.0-alpine`, `1-alpine`, `1.0.1`, `1.0`, `1`, `latest` *(alpine/Dockerfile)*](https://github.com/creemama/docker-run-non-root/blob/1.0.1/alpine/Dockerfile)
+ * [`1.0.1-centos`, `1.0-centos`, `1-centos`, `centos` *(centos/Dockerfile)*](https://github.com/creemama/docker-run-non-root/blob/1.0.1/centos/Dockerfile)
+ * [`1.0.1-debian`, `1.0-debian`, `1-debian`, `debian` *(debian/Dockerfile)*](https://github.com/creemama/docker-run-non-root/blob/1.0.1/debian/Dockerfile)
+ * [`1.0.1-fedora`, `1.0-fedora`, `1-fedora`, `fedora` *(fedora/Dockerfile)*](https://github.com/creemama/docker-run-non-root/blob/1.0.1/fedora/Dockerfile)
+ * [`1.0.1-ubuntu`, `1.0-ubuntu`, `1-ubuntu`, `ubuntu` *(ubuntu/Dockerfile)*](https://github.com/creemama/docker-run-non-root/blob/1.0.1/ubuntu/Dockerfile)
 
 # run-non-root
 
