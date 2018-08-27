@@ -34,7 +34,7 @@ RUN           cd /usr/local/bin \
  >> script && echo "chown -R \$(id -u certbot):\$(id -g certbot) /var/lib/letsencrypt/" \
  >> script && echo "mkdir /var/log/letsencrypt/" \
  >> script && echo "chown -R \$(id -u certbot):\$(id -g certbot) /var/log/letsencrypt/" \
- >> script && echo "exec run-non-root \$@" \
+ >> script && echo "exec run-non-root \"\$@\"" \
  >> script && mv script run-non-root-certbot \
            && chmod +x run-non-root-certbot
 
