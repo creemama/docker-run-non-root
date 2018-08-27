@@ -5,13 +5,13 @@ services:
       context: ./alpine
     command: 'ps aux'
     container_name: 'run-non-root-alpine'
-    image: 'creemama/run-non-root:1.0.1-alpine'
+    image: 'creemama/run-non-root:1.1.0-alpine'
   centos:
     build:
       context: ./centos
     command: 'ps aux'
     container_name: 'run-non-root-centos'
-    image: 'creemama/run-non-root:1.0.1-centos'
+    image: 'creemama/run-non-root:1.1.0-centos'
   certbot:
     build:
       context: ./certbot
@@ -20,14 +20,14 @@ services:
     environment:
       - RUN_NON_ROOT_GID=${RUN_NON_ROOT_GID-}
       - RUN_NON_ROOT_UID=${RUN_NON_ROOT_UID-}
-    image: 'creemama/run-non-root:1.0.1-certbot'
+    image: 'creemama/run-non-root:1.1.0-certbot'
     volumes:
       - "${LETS_ENCRYPT_PATH-}:/etc/letsencrypt"
   certbot-renew-cron:
     build:
       context: ./certbot-renew-cron
     container_name: 'run-non-root-certbot-renew-cron'
-    image: 'creemama/run-non-root:1.0.1-certbot-renew-cron'
+    image: 'creemama/run-non-root:1.1.0-certbot-renew-cron'
     environment:
       - RUN_NON_ROOT_GID=${RUN_NON_ROOT_GID-}
       - RUN_NON_ROOT_UID=${RUN_NON_ROOT_UID-}
@@ -38,13 +38,13 @@ services:
       context: ./fedora
     command: 'ps aux'
     container_name: 'run-non-root-fedora'
-    image: 'creemama/run-non-root:1.0.1-fedora'
+    image: 'creemama/run-non-root:1.1.0-fedora'
   debian:
     build:
       context: ./debian
     command: 'ps aux'
     container_name: 'run-non-root-debian'
-    image: 'creemama/run-non-root:1.0.1-debian'
+    image: 'creemama/run-non-root:1.1.0-debian'
   node:
     build:
       context: ./node
@@ -52,10 +52,10 @@ services:
     environment:
       - RUN_NON_ROOT_GID=${RUN_NON_ROOT_GID-}
       - RUN_NON_ROOT_UID=${RUN_NON_ROOT_UID-}
-    image: 'creemama/run-non-root:1.0.1-node'
+    image: 'creemama/run-non-root:1.1.0-node'
   ubuntu:
     build:
       context: ./ubuntu
     command: 'ps aux'
     container_name: 'run-non-root-ubuntu'
-    image: 'creemama/run-non-root:1.0.1-ubuntu'
+    image: 'creemama/run-non-root:1.1.0-ubuntu'
