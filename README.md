@@ -14,11 +14,11 @@ without having to specify a `USER` with hardcoded UIDs and GIDs in our Dockerfil
 
 # Supported tags and respective `Dockerfile` links
 
- * [`1.1.0-alpine`, `1.1-alpine`, `1-alpine`, `1.1.0`, `1.1`, `1`, `latest` *(alpine/Dockerfile)*](https://github.com/creemama/docker-run-non-root/blob/1.1.0/alpine/Dockerfile)
- * [`1.1.0-centos`, `1.1-centos`, `1-centos`, `centos` *(centos/Dockerfile)*](https://github.com/creemama/docker-run-non-root/blob/1.1.0/centos/Dockerfile)
- * [`1.1.0-debian`, `1.1-debian`, `1-debian`, `debian` *(debian/Dockerfile)*](https://github.com/creemama/docker-run-non-root/blob/1.1.0/debian/Dockerfile)
- * [`1.1.0-fedora`, `1.1-fedora`, `1-fedora`, `fedora` *(fedora/Dockerfile)*](https://github.com/creemama/docker-run-non-root/blob/1.1.0/fedora/Dockerfile)
- * [`1.1.0-ubuntu`, `1.1-ubuntu`, `1-ubuntu`, `ubuntu` *(ubuntu/Dockerfile)*](https://github.com/creemama/docker-run-non-root/blob/1.1.0/ubuntu/Dockerfile)
+ * [`1.2.0-alpine`, `1.2-alpine`, `1-alpine`, `1.2.0`, `1.2`, `1`, `latest` *(alpine/Dockerfile)*](https://github.com/creemama/docker-run-non-root/blob/1.2.0/alpine/Dockerfile)
+ * [`1.2.0-centos`, `1.2-centos`, `1-centos`, `centos` *(centos/Dockerfile)*](https://github.com/creemama/docker-run-non-root/blob/1.2.0/centos/Dockerfile)
+ * [`1.2.0-debian`, `1.2-debian`, `1-debian`, `debian` *(debian/Dockerfile)*](https://github.com/creemama/docker-run-non-root/blob/1.2.0/debian/Dockerfile)
+ * [`1.2.0-fedora`, `1.2-fedora`, `1-fedora`, `fedora` *(fedora/Dockerfile)*](https://github.com/creemama/docker-run-non-root/blob/1.2.0/fedora/Dockerfile)
+ * [`1.2.0-ubuntu`, `1.2-ubuntu`, `1-ubuntu`, `ubuntu` *(ubuntu/Dockerfile)*](https://github.com/creemama/docker-run-non-root/blob/1.2.0/ubuntu/Dockerfile)
 
 **Examples**
 
@@ -38,7 +38,7 @@ Run Linux commands as a non-root user, creating a non-root user if necessary.
 
 Options:
   -d, --debug             Output debug information; using --quiet does not
-                          silence debug output.
+                          silence debug output. Double up (-dd) for more output.
   -f, --group GROUP_NAME  The group name to use when executing the command; the
                           default group name is USERNAME or nonroot; this
                           option is ignored if we are already running as a
@@ -200,7 +200,7 @@ CMD ["--", "/your/program", "-and", "-its", "arguments"]
 
 From one of run-non-root's images:
 ```
-FROM creemama/run-non-root:1.1.0-alpine
+FROM creemama/run-non-root:1.2.0-alpine
 
 ...
 
