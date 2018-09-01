@@ -23,18 +23,10 @@ RUN chmod +x /usr/local/bin/run-non-root
 # End the copy of run-non-root's Alpine Dockerfile.
 ##########
 
-# Update the permissions of Let's Encrypt directories:
-#  * /var/lib/letsencrypt
-#  * /var/log/letsencrypt
-# We assume that you have mounted /etc/letsencrypt.
 RUN           cd /usr/local/bin \
-           && echo "#!/bin/sh" \
-  > script && echo \
- >> script && echo "run-non-root --quiet -- sh -c \"echo 'We created or reused the certbot user.' > /dev/null\"" \
- >> script && echo "chown -R \$(id -u certbot):\$(id -g certbot) /var/lib/letsencrypt/" \
- >> script && echo "mkdir /var/log/letsencrypt/" \
- >> script && echo "chown -R \$(id -u certbot):\$(id -g certbot) /var/log/letsencrypt/" \
- >> script && echo "exec run-non-root \"\$@\"" \
+           && printf "%s\n" "#!/bin/sh" \
+  > script && printf "%s\n" \
+ >> script && printf "%s\n" "exec run-non-root --path \"/etc/letsencrypt:/var/lib/letsencrypt:/var/log/letsencrypt\" \"\$@\"" \
  >> script && mv script run-non-root-certbot \
            && chmod +x run-non-root-certbot
 
