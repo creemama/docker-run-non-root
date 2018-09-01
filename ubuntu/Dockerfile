@@ -4,6 +4,9 @@ FROM ubuntu:18.04
 # This file closely mimics the Debian one. If you make updates here, make
 # updates there as well.
 
+# "Best practices for writing Dockerfiles" > "RUN" > "APT-GET"
+# https://docs.docker.com/develop/develop-images/dockerfile_best-practices/#apt-get
+
 # Install su-exec (https://github.com/ncopa/su-exec/commit/dddd1567b7c76365e1e0aac561287975020a8fad).
 ADD https://github.com/ncopa/su-exec/archive/dddd1567b7c76365e1e0aac561287975020a8fad.zip su-exec.zip
 RUN apt-get update \
@@ -23,7 +26,8 @@ RUN apt-get update \
       gcc \
       libc-dev \
       make \
-      unzip
+      unzip \
+ && rm -rf /var/lib/apt/lists/*
 
 # Install tini for run-non-root's --init option.
 ADD https://github.com/krallin/tini/releases/download/v0.18.0/tini-static /usr/local/bin/tini

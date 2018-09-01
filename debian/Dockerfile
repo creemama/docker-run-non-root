@@ -8,6 +8,9 @@ FROM debian:9.5
 # https://github.com/docker-library/httpd/blob/38842a5d4cdd44ff4888e8540c0da99009790d01/2.4/Dockerfile
 # https://github.com/docker-library/postgres/blob/69bc540ecfffecce72d49fa7e4a46680350037f9/9.6/Dockerfile
 
+# "Best practices for writing Dockerfiles" > "RUN" > "APT-GET"
+# https://docs.docker.com/develop/develop-images/dockerfile_best-practices/#apt-get
+
 # Install su-exec (https://github.com/ncopa/su-exec/commit/dddd1567b7c76365e1e0aac561287975020a8fad).
 ADD https://github.com/ncopa/su-exec/archive/dddd1567b7c76365e1e0aac561287975020a8fad.zip su-exec.zip
 RUN apt-get update \
@@ -27,7 +30,8 @@ RUN apt-get update \
       gcc \
       libc-dev \
       make \
-      unzip
+      unzip \
+ && rm -rf /var/lib/apt/lists/*
 
 # Install tini for run-non-root's --init option.
 ADD https://github.com/krallin/tini/releases/download/v0.18.0/tini-static /usr/local/bin/tini
