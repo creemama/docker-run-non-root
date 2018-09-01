@@ -14,17 +14,17 @@ without having to specify a `USER` with hardcoded UIDs and GIDs in our Dockerfil
 
 # Supported tags and respective `Dockerfile` links
 
- * [`1.2.0-alpine`, `1.2-alpine`, `1-alpine`, `1.2.0`, `1.2`, `1`, `latest` *(alpine/Dockerfile)*](https://github.com/creemama/docker-run-non-root/blob/1.2.0/alpine/Dockerfile)
- * [`1.2.0-centos`, `1.2-centos`, `1-centos`, `centos` *(centos/Dockerfile)*](https://github.com/creemama/docker-run-non-root/blob/1.2.0/centos/Dockerfile)
- * [`1.2.0-debian`, `1.2-debian`, `1-debian`, `debian` *(debian/Dockerfile)*](https://github.com/creemama/docker-run-non-root/blob/1.2.0/debian/Dockerfile)
- * [`1.2.0-fedora`, `1.2-fedora`, `1-fedora`, `fedora` *(fedora/Dockerfile)*](https://github.com/creemama/docker-run-non-root/blob/1.2.0/fedora/Dockerfile)
- * [`1.2.0-ubuntu`, `1.2-ubuntu`, `1-ubuntu`, `ubuntu` *(ubuntu/Dockerfile)*](https://github.com/creemama/docker-run-non-root/blob/1.2.0/ubuntu/Dockerfile)
+ * [`1.3.0-alpine`, `1.3-alpine`, `1-alpine`, `1.3.0`, `1.3`, `1`, `latest` *(alpine/Dockerfile)*](https://github.com/creemama/docker-run-non-root/blob/1.3.0/alpine/Dockerfile)
+ * [`1.3.0-centos`, `1.3-centos`, `1-centos`, `centos` *(centos/Dockerfile)*](https://github.com/creemama/docker-run-non-root/blob/1.3.0/centos/Dockerfile)
+ * [`1.3.0-debian`, `1.3-debian`, `1-debian`, `debian` *(debian/Dockerfile)*](https://github.com/creemama/docker-run-non-root/blob/1.3.0/debian/Dockerfile)
+ * [`1.3.0-fedora`, `1.3-fedora`, `1-fedora`, `fedora` *(fedora/Dockerfile)*](https://github.com/creemama/docker-run-non-root/blob/1.3.0/fedora/Dockerfile)
+ * [`1.3.0-ubuntu`, `1.3-ubuntu`, `1-ubuntu`, `ubuntu` *(ubuntu/Dockerfile)*](https://github.com/creemama/docker-run-non-root/blob/1.3.0/ubuntu/Dockerfile)
 
 **Examples**
 
- * [`1-certbot` *(certbot/Dockerfile)*](https://github.com/creemama/docker-run-non-root/blob/1/certbot/Dockerfile)
- * [`1-certbot-renew-cron` *(certbot-renew-cron/Dockerfile)*](https://github.com/creemama/docker-run-non-root/blob/1/certbot-renew-cron/Dockerfile)
- * [`1-node` *(node/Dockerfile)*](https://github.com/creemama/docker-run-non-root/blob/1/node/Dockerfile)
+ * [`1.3.0-certbot` *(certbot/Dockerfile)*](https://github.com/creemama/docker-run-non-root/blob/1.3.0/certbot/Dockerfile)
+ * [`1.3.0-certbot-renew-cron` *(certbot-renew-cron/Dockerfile)*](https://github.com/creemama/docker-run-non-root/blob/1.3.0/certbot-renew-cron/Dockerfile)
+ * [`1.3.0-node` *(node/Dockerfile)*](https://github.com/creemama/docker-run-non-root/blob/1.3.0/node/Dockerfile)
 
 # run-non-root
 
@@ -54,6 +54,13 @@ Options:
   -i, --init              Run an init (the tini command) that forwards signals
                           and reaps processes; this matches the docker run
                           option --init.
+  -p, --path              Colon-separated list of directories to run
+                          "chown -R USERNAME:GID" on before executing the
+                          command; you can use this option multiple times
+                          instead of using a colon-separated list; if a
+                          directory does not exist, run-non-root attempts to
+                          create it; run-non-root ignores this option if you
+                          are already running as a non-root user.
   -q, --quiet             Do not output "Running ( COMMAND ) as USER_INFO ..."
                           or warnings; this option does not silence --debug
                           output.
@@ -71,7 +78,8 @@ Options:
 
 Environment Variables:
   RUN_NON_ROOT_COMMAND    The command to execute if a command is not given; the
-                          default is sh.
+                          default is bash; if bash does not exist, the default
+                          is sh.
   RUN_NON_ROOT_GID        The group ID to use when executing the command; see
                           the --gid option for more info.
   RUN_NON_ROOT_GROUP      The group name to use when executing the command; see
@@ -82,7 +90,7 @@ Environment Variables:
                           the --user option for more info.
 
 Examples:
-  # Run sh as a non-root user.
+  # Run bash or sh as a non-root user.
   run-non-root
 
   # Run id as a non-root user.
@@ -200,7 +208,7 @@ CMD ["--", "/your/program", "-and", "-its", "arguments"]
 
 From one of run-non-root's images:
 ```
-FROM creemama/run-non-root:1.2.0-alpine
+FROM creemama/run-non-root:1.3.0-alpine
 
 ...
 

@@ -1,4 +1,4 @@
-FROM creemama/run-non-root:1.2.0-certbot
+FROM creemama/run-non-root:1.3.0-certbot
 
 # If necessary, install one or more of Certbot's DNS plugins.
 # This snippet just installs the Route 53 plugin.
