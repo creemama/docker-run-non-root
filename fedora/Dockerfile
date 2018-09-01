@@ -4,12 +4,10 @@ FROM fedora:28
 # This file closely mimics the CentOS one. If you make updates here, make
 # updates there as well.
 
-RUN yum -y update \
- && yum clean all
-
 # Install su-exec (https://github.com/ncopa/su-exec/commit/dddd1567b7c76365e1e0aac561287975020a8fad).
 ADD https://github.com/ncopa/su-exec/archive/dddd1567b7c76365e1e0aac561287975020a8fad.zip su-exec.zip
-RUN yum install -y \
+RUN yum -y update \
+ && yum install -y \
       gcc \
       make \
       unzip \
@@ -22,7 +20,9 @@ RUN yum install -y \
  && yum remove -y \
       gcc \
       make \
-      unzip
+      unzip \
+ && yum clean all \
+ && rm -rf /var/cache/yum
 
 # Install tini for run-non-root's --init option.
 ADD https://github.com/krallin/tini/releases/download/v0.18.0/tini-static /usr/local/bin/tini
