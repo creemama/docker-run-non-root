@@ -24,13 +24,13 @@ RUN chmod +x /usr/local/bin/run-non-root
 ##########
 
 RUN           cd /usr/local/bin \
-           && printf "%s\n" "#!/bin/sh" \
-  > script && printf "%s\n" \
- >> script && printf "%s\n" "exec run-non-root --path \"/etc/letsencrypt:/var/lib/letsencrypt:/var/log/letsencrypt\" \"\$@\"" \
+           && printf '%s\n' '#!/bin/sh' \
+  > script && printf '%s\n' \
+ >> script && printf '%s\n' "exec run-non-root --path '/etc/letsencrypt:/var/lib/letsencrypt:/var/log/letsencrypt' \"\$@\"" \
  >> script && mv script run-non-root-certbot \
            && chmod +x run-non-root-certbot
 
-ENV RUN_NON_ROOT_COMMAND "certbot"
+ENV RUN_NON_ROOT_COMMAND certbot
 ENV RUN_NON_ROOT_USER certbot
 
 ENTRYPOINT ["run-non-root-certbot"]

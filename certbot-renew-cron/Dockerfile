@@ -10,7 +10,7 @@ RUN pip install --upgrade 'pip==18.0' \
 
 # Run the cron every day at midnight and noon.
 # https://certbot.eff.org/#pip-other recommends renewing twice a day.
-RUN echo "0  0,12  *  *  *  run-non-root-certbot" > /etc/crontabs/root
+RUN printf '%s' '0  0,12  *  *  *  run-non-root-certbot' > /etc/crontabs/root
 
 ENV RUN_NON_ROOT_COMMAND "certbot renew"
 
