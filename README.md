@@ -14,17 +14,17 @@ without having to specify a `USER` with hardcoded UIDs and GIDs in our Dockerfil
 
 # Supported tags and respective `Dockerfile` links
 
- * [`1.3.0-alpine`, `1.3-alpine`, `1-alpine`, `1.3.0`, `1.3`, `1`, `latest` *(alpine/Dockerfile)*](https://github.com/creemama/docker-run-non-root/blob/1.3.0/alpine/Dockerfile)
- * [`1.3.0-centos`, `1.3-centos`, `1-centos`, `centos` *(centos/Dockerfile)*](https://github.com/creemama/docker-run-non-root/blob/1.3.0/centos/Dockerfile)
- * [`1.3.0-debian`, `1.3-debian`, `1-debian`, `debian` *(debian/Dockerfile)*](https://github.com/creemama/docker-run-non-root/blob/1.3.0/debian/Dockerfile)
- * [`1.3.0-fedora`, `1.3-fedora`, `1-fedora`, `fedora` *(fedora/Dockerfile)*](https://github.com/creemama/docker-run-non-root/blob/1.3.0/fedora/Dockerfile)
- * [`1.3.0-ubuntu`, `1.3-ubuntu`, `1-ubuntu`, `ubuntu` *(ubuntu/Dockerfile)*](https://github.com/creemama/docker-run-non-root/blob/1.3.0/ubuntu/Dockerfile)
+ * [`1.4.0-alpine`, `1.4-alpine`, `1-alpine`, `1.4.0`, `1.4`, `1`, `latest` *(alpine/Dockerfile)*](https://github.com/creemama/docker-run-non-root/blob/1.4.0/alpine/Dockerfile)
+ * [`1.4.0-centos`, `1.4-centos`, `1-centos`, `centos` *(centos/Dockerfile)*](https://github.com/creemama/docker-run-non-root/blob/1.4.0/centos/Dockerfile)
+ * [`1.4.0-debian`, `1.4-debian`, `1-debian`, `debian` *(debian/Dockerfile)*](https://github.com/creemama/docker-run-non-root/blob/1.4.0/debian/Dockerfile)
+ * [`1.4.0-fedora`, `1.4-fedora`, `1-fedora`, `fedora` *(fedora/Dockerfile)*](https://github.com/creemama/docker-run-non-root/blob/1.4.0/fedora/Dockerfile)
+ * [`1.4.0-ubuntu`, `1.4-ubuntu`, `1-ubuntu`, `ubuntu` *(ubuntu/Dockerfile)*](https://github.com/creemama/docker-run-non-root/blob/1.4.0/ubuntu/Dockerfile)
 
 **Examples**
 
- * [`1.3.0-certbot` *(certbot/Dockerfile)*](https://github.com/creemama/docker-run-non-root/blob/1.3.0/certbot/Dockerfile)
- * [`1.3.0-certbot-renew-cron` *(certbot-renew-cron/Dockerfile)*](https://github.com/creemama/docker-run-non-root/blob/1.3.0/certbot-renew-cron/Dockerfile)
- * [`1.3.0-node` *(node/Dockerfile)*](https://github.com/creemama/docker-run-non-root/blob/1.3.0/node/Dockerfile)
+ * [`1.4.0-certbot` *(certbot/Dockerfile)*](https://github.com/creemama/docker-run-non-root/blob/1.4.0/certbot/Dockerfile)
+ * [`1.4.0-certbot-renew-cron` *(certbot-renew-cron/Dockerfile)*](https://github.com/creemama/docker-run-non-root/blob/1.4.0/certbot-renew-cron/Dockerfile)
+ * [`1.4.0-node` *(node/Dockerfile)*](https://github.com/creemama/docker-run-non-root/blob/1.4.0/node/Dockerfile)
 
 # run-non-root
 
@@ -37,6 +37,12 @@ Usage:
 Run Linux commands as a non-root user, creating a non-root user if necessary.
 
 Options:
+  -c, --chown             Colon-separated list of files and directories to run
+                          "chown USERNAME:GID" on before executing the
+                          command; you can use this option multiple times
+                          instead of using a colon-separated list; run-non-root
+                          ignores this option if you are already running as a
+                          non-root user; unlike -p this option is non-recursive.
   -d, --debug             Output debug information; using --quiet does not
                           silence debug output. Double up (-dd) for more output.
   -f, --group GROUP_NAME  The group name to use when executing the command; the
@@ -60,7 +66,8 @@ Options:
                           instead of using a colon-separated list; if a
                           directory does not exist, run-non-root attempts to
                           create it; run-non-root ignores this option if you
-                          are already running as a non-root user.
+                          are already running as a non-root user; unlike -c
+                          this option is recursive.
   -q, --quiet             Do not output "Running ( COMMAND ) as USER_INFO ..."
                           or warnings; this option does not silence --debug
                           output.
@@ -208,7 +215,7 @@ CMD ["--", "/your/program", "-and", "-its", "arguments"]
 
 From one of run-non-root's images:
 ```
-FROM creemama/run-non-root:1.3.0-alpine
+FROM creemama/run-non-root:1.4.0-alpine
 
 ...
 
