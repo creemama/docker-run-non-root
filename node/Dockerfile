@@ -1,6 +1,6 @@
 # https://nodejs.org/en/download/current/
 # https://hub.docker.com/_/node/
-FROM node:10.5.0-alpine
+FROM node:10.15.1-alpine
 
 ##########
 # Start a copy of run-non-root's Alpine Dockerfile.
@@ -29,7 +29,7 @@ RUN chmod +x /usr/local/bin/run-non-root
 # Package shadow has userdel.
 RUN userdel -r node
 
-ENV RUN_NON_ROOT_COMMAND node
+ENV RUN_NON_ROOT_COMMAND sh
 ENV RUN_NON_ROOT_USER node
 
 ENTRYPOINT ["run-non-root"]

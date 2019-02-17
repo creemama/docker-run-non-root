@@ -1,5 +1,5 @@
 # Match debian:latest (https://hub.docker.com/_/debian/).
-FROM debian:9.5
+FROM debian:9.7
 
 # This file closely mimics the Ubuntu one. If you make updates here, make
 # updates there as well.

@@ -1,5 +1,5 @@
 # Match alpine:latest (https://hub.docker.com/_/alpine/).
-FROM alpine:3.8
+FROM alpine:3.9
 
 # Install su-exec (https://github.com/ncopa/su-exec/commit/dddd1567b7c76365e1e0aac561287975020a8fad).
 # Install shadow, which has groupadd and useradd.

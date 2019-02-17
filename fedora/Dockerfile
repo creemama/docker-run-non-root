@@ -1,5 +1,5 @@
 # Match fedora:latest (https://hub.docker.com/_/fedora/).
-FROM fedora:28
+FROM fedora:29
 
 # This file closely mimics the CentOS one. If you make updates here, make
 # updates there as well.
