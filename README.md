@@ -14,17 +14,20 @@ without having to specify a `USER` with hardcoded UIDs and GIDs in our Dockerfil
 
 # Supported tags and respective `Dockerfile` links
 
- * [`1.4.0-alpine`, `1.4-alpine`, `1-alpine`, `1.4.0`, `1.4`, `1`, `latest` *(alpine/Dockerfile)*](https://github.com/creemama/docker-run-non-root/blob/1.4.0/alpine/Dockerfile)
+ * [`1.4.0-alpine`, `1.4-alpine`, `1-alpine`, `1.4.0`, `1.4`, `1` *(alpine/Dockerfile)*](https://github.com/creemama/docker-run-non-root/blob/1.4.0/alpine/Dockerfile)
+ * [`1.4.0-alpine-3.9`, `latest` *(alpine/Dockerfile)*](https://github.com/creemama/docker-run-non-root/blob/883dc80f3cef169c7483ea151f4c74728ee49173/alpine/Dockerfile)
  * [`1.4.0-centos`, `1.4-centos`, `1-centos`, `centos` *(centos/Dockerfile)*](https://github.com/creemama/docker-run-non-root/blob/1.4.0/centos/Dockerfile)
  * [`1.4.0-debian`, `1.4-debian`, `1-debian`, `debian` *(debian/Dockerfile)*](https://github.com/creemama/docker-run-non-root/blob/1.4.0/debian/Dockerfile)
+ * [`1.4.0-debian-9.7` *(debian/Dockerfile)*](https://github.com/creemama/docker-run-non-root/blob/883dc80f3cef169c7483ea151f4c74728ee49173/debian/Dockerfile)
  * [`1.4.0-fedora`, `1.4-fedora`, `1-fedora`, `fedora` *(fedora/Dockerfile)*](https://github.com/creemama/docker-run-non-root/blob/1.4.0/fedora/Dockerfile)
+ * [`1.4.0-fedora-29` *(fedora/Dockerfile)*](https://github.com/creemama/docker-run-non-root/blob/883dc80f3cef169c7483ea151f4c74728ee49173/fedora/Dockerfile)
  * [`1.4.0-ubuntu`, `1.4-ubuntu`, `1-ubuntu`, `ubuntu` *(ubuntu/Dockerfile)*](https://github.com/creemama/docker-run-non-root/blob/1.4.0/ubuntu/Dockerfile)
 
 **Examples**
 
  * [`1.4.0-certbot` *(certbot/Dockerfile)*](https://github.com/creemama/docker-run-non-root/blob/1.4.0/certbot/Dockerfile)
  * [`1.4.0-certbot-renew-cron` *(certbot-renew-cron/Dockerfile)*](https://github.com/creemama/docker-run-non-root/blob/1.4.0/certbot-renew-cron/Dockerfile)
- * [`1.4.0-node` *(node/Dockerfile)*](https://github.com/creemama/docker-run-non-root/blob/1.4.0/node/Dockerfile)
+ * [`1.4.0-node-10.15.1` *(node/Dockerfile)*](https://github.com/creemama/docker-run-non-root/blob/883dc80f3cef169c7483ea151f4c74728ee49173/node/Dockerfile)
 
 # run-non-root
 
