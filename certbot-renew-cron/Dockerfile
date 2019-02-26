@@ -1,12 +1,12 @@
-FROM creemama/run-non-root:1.4.0-certbot
+FROM creemama/run-non-root:1.4.0-certbot-0.31.0
 
 # If necessary, install one or more of Certbot's DNS plugins.
 # This snippet just installs the Route 53 plugin.
 # https://certbot.eff.org/docs/using.html
 # https://pypi.python.org/pypi/pip
 # https://pypi.python.org/pypi/certbot-dns-route53
-RUN pip install --upgrade 'pip==18.0' \
- && pip install certbot-dns-route53==0.26.1
+RUN pip install --upgrade 'pip==19.0.3' \
+ && pip install certbot-dns-route53==0.31.0
 
 # Run the cron every day at midnight and noon.
 # https://certbot.eff.org/#pip-other recommends renewing twice a day.

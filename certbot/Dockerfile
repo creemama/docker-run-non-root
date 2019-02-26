@@ -1,5 +1,5 @@
 # https://hub.docker.com/r/certbot/certbot/tags/
-FROM certbot/certbot:v0.26.1
+FROM certbot/certbot:v0.31.0
 
 ##########
 # Start a copy of run-non-root's Alpine Dockerfile.
