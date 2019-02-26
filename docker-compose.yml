@@ -33,18 +33,18 @@ services:
       - RUN_NON_ROOT_UID=${RUN_NON_ROOT_UID-}
     volumes:
       - "${LETS_ENCRYPT_PATH-}:/etc/letsencrypt"
-  fedora:
-    build:
-      context: ./fedora
-    command: 'ps aux'
-    container_name: 'run-non-root-fedora'
-    image: 'creemama/run-non-root:1.4.0-fedora-29-1'
   debian:
     build:
       context: ./debian
     command: 'ps aux'
     container_name: 'run-non-root-debian'
     image: 'creemama/run-non-root:1.4.0-debian-9.7-1'
+  fedora:
+    build:
+      context: ./fedora
+    command: 'ps aux'
+    container_name: 'run-non-root-fedora'
+    image: 'creemama/run-non-root:1.4.0-fedora-29-1'
   node:
     build:
       context: ./node
