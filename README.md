@@ -210,7 +210,7 @@ FROM alpine:3.8
 ...
 
 ADD https://raw.githubusercontent.com/creemama/run-non-root/master/run-non-root.sh /usr/local/bin/run-non-root
-RUN chmod +x /usr/local/bin/run-non-root
+RUN chmod +rx /usr/local/bin/run-non-root
 
 ENTRYPOINT ["run-non-root"]
 CMD ["--", "/your/program", "-and", "-its", "arguments"]
