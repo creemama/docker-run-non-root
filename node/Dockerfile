@@ -29,6 +29,9 @@ RUN chmod +rx /usr/local/bin/run-non-root
 # Package shadow has userdel.
 RUN userdel -r node
 
+# https://www.npmjs.com/package/npm
+RUN npm install -g npm@6.8.0
+
 ENV RUN_NON_ROOT_COMMAND sh
 ENV RUN_NON_ROOT_USER node
 

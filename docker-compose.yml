@@ -52,7 +52,7 @@ services:
     environment:
       - RUN_NON_ROOT_GID=${RUN_NON_ROOT_GID-}
       - RUN_NON_ROOT_UID=${RUN_NON_ROOT_UID-}
-    image: 'creemama/run-non-root:1.4.0-node-10.15.1-1'
+    image: 'creemama/run-non-root:1.4.0-node-10.15.1-2'
   ubuntu:
     build:
       context: ./ubuntu
