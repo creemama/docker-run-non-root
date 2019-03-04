@@ -20,6 +20,14 @@ RUN chmod +rx /usr/local/bin/tini
 ADD https://raw.githubusercontent.com/creemama/run-non-root/v1.4.0/run-non-root.sh /usr/local/bin/run-non-root
 RUN chmod +rx /usr/local/bin/run-non-root
 
+# Warn users if they are running as root.
+# See the "Invoked with name sh" section of
+# https://www.gnu.org/software/bash/manual/html_node/Bash-Startup-Files.html .
+# See also https://www.tldp.org/LDP/Linux-Filesystem-Hierarchy/html/etc.html .
+ENV ENV /etc/profile
+RUN printf "%s" "if [ "\$\(whoami\)" = 'root' ]; then printf \"\n\033[1;31m%s\033[0m\n\n\" \"WARNING: YOU ARE RUNNING AS THE ROOT USER!\"; fi" \
+ >> /etc/profile.d/warn-root.sh
+
 # End the copy of run-non-root's Alpine Dockerfile.
 ##########
 
