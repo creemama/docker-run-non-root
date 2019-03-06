@@ -3,15 +3,32 @@ services:
   alpine:
     build:
       context: ./alpine
-    command: 'ps aux'
+    # command: 'ps aux'
+    command: -- /bin/sh -c "while :; do echo 'Hit CTRL+C'; sleep 1d; done"
     container_name: 'run-non-root-alpine'
     image: 'creemama/run-non-root:1.4.0-alpine-3.9-1'
+    read_only: true
+    security_opt:
+      - no-new-privileges
+    tmpfs:
+      - /home/nonroot
+    volumes:
+      - /etc
+      - /var/mail/nonroot
   centos:
     build:
       context: ./centos
-    command: 'ps aux'
+    # command: 'ps aux'
+    command: -- /bin/sh -c "while :; do echo 'Hit CTRL+C'; sleep 1d; done"
     container_name: 'run-non-root-centos'
     image: 'creemama/run-non-root:1.4.0-centos-7'
+    read_only: true
+    security_opt:
+      - no-new-privileges
+    tmpfs:
+      - /home/nonroot
+    volumes:
+      - /etc
   certbot:
     build:
       context: ./certbot
@@ -21,7 +38,16 @@ services:
       - RUN_NON_ROOT_GID=${RUN_NON_ROOT_GID-}
       - RUN_NON_ROOT_UID=${RUN_NON_ROOT_UID-}
     image: 'creemama/run-non-root:1.4.0-certbot-0.31.0'
+    read_only: true
+    security_opt:
+      - no-new-privileges
+    tmpfs:
+      - /home/certbot
+      - /tmp
+      - /var/log
+      - /var/mail/certbot
     volumes:
+      - /etc
       - "${LETS_ENCRYPT_PATH-}:/etc/letsencrypt"
   certbot-renew-cron:
     build:
@@ -31,31 +57,75 @@ services:
     environment:
       - RUN_NON_ROOT_GID=${RUN_NON_ROOT_GID-}
       - RUN_NON_ROOT_UID=${RUN_NON_ROOT_UID-}
+    read_only: true
+    security_opt:
+      - no-new-privileges
+    tmpfs:
+      - /home/certbot
+      - /tmp
+      - /var/log
+      - /var/mail/certbot
     volumes:
+      - /etc
       - "${LETS_ENCRYPT_PATH-}:/etc/letsencrypt"
   debian:
     build:
       context: ./debian
-    command: 'ps aux'
+    # command: 'ps aux'
+    command: -- /bin/sh -c "while :; do echo 'Hit CTRL+C'; sleep 1d; done"
     container_name: 'run-non-root-debian'
     image: 'creemama/run-non-root:1.4.0-debian-9.7-1'
+    read_only: true
+    security_opt:
+      - no-new-privileges
+    tmpfs:
+      - /home/nonroot
+    volumes:
+      - /etc
   fedora:
     build:
       context: ./fedora
-    command: 'ps aux'
+    # command: 'ps aux'
+    command: -- /bin/sh -c "while :; do echo 'Hit CTRL+C'; sleep 1d; done"
     container_name: 'run-non-root-fedora'
     image: 'creemama/run-non-root:1.4.0-fedora-29-1'
+    read_only: true
+    security_opt:
+      - no-new-privileges
+    tmpfs:
+      - /home/nonroot
+    volumes:
+      - /etc
   node:
     build:
       context: ./node
     container_name: 'run-non-root-node'
     environment:
+      # - RUN_NON_ROOT_COMMAND=node --version
+      - RUN_NON_ROOT_COMMAND=/bin/sh -c "node --version && while :; do echo 'Hit CTRL+C'; sleep 1d; done"
       - RUN_NON_ROOT_GID=${RUN_NON_ROOT_GID-}
       - RUN_NON_ROOT_UID=${RUN_NON_ROOT_UID-}
     image: 'creemama/run-non-root:1.4.0-node-10.15.1-2'
+    read_only: true
+    security_opt:
+      - no-new-privileges
+    tmpfs:
+      - /home/node
+      - /var/log
+      - /var/mail/node
+    volumes:
+      - /etc
   ubuntu:
     build:
       context: ./ubuntu
-    command: 'ps aux'
+    # command: 'ps aux'
+    command: -- /bin/sh -c "while :; do echo 'Hit CTRL+C'; sleep 1d; done"
     container_name: 'run-non-root-ubuntu'
     image: 'creemama/run-non-root:1.4.0-ubuntu-18.04'
+    read_only: true
+    security_opt:
+      - no-new-privileges
+    tmpfs:
+      - /home/nonroot
+    volumes:
+      - /etc
