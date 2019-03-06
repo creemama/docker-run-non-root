@@ -34,7 +34,7 @@ ADD https://github.com/krallin/tini/releases/download/v0.18.0/tini-static /usr/l
 RUN chmod +rx /usr/local/bin/tini
 
 # Install run-non-root.
-ADD https://raw.githubusercontent.com/creemama/run-non-root/v1.4.0/run-non-root.sh /usr/local/bin/run-non-root
+ADD https://raw.githubusercontent.com/creemama/run-non-root/v1.5.1/run-non-root.sh /usr/local/bin/run-non-root
 RUN chmod +rx /usr/local/bin/run-non-root
 
 # Warn users if they are running as root.

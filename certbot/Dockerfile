@@ -3,7 +3,7 @@ FROM certbot/certbot:v0.31.0
 
 ##########
 # Start a copy of run-non-root's Alpine Dockerfile.
-# https://github.com/creemama/docker-run-non-root/blob/1.4.0/alpine/Dockerfile
+# https://github.com/creemama/docker-run-non-root/blob/1.5.1/alpine/Dockerfile
 
 # Install su-exec (https://github.com/ncopa/su-exec/commit/dddd1567b7c76365e1e0aac561287975020a8fad).
 # Install shadow, which has groupadd and useradd.
@@ -17,7 +17,7 @@ ADD https://github.com/krallin/tini/releases/download/v0.18.0/tini-static /usr/l
 RUN chmod +rx /usr/local/bin/tini
 
 # Install run-non-root.
-ADD https://raw.githubusercontent.com/creemama/run-non-root/v1.4.0/run-non-root.sh /usr/local/bin/run-non-root
+ADD https://raw.githubusercontent.com/creemama/run-non-root/v1.5.1/run-non-root.sh /usr/local/bin/run-non-root
 RUN chmod +rx /usr/local/bin/run-non-root
 
 # Warn users if they are running as root.

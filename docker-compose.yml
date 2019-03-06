@@ -6,7 +6,7 @@ services:
     # command: 'ps aux'
     command: -- /bin/sh -c "while :; do echo 'Hit CTRL+C'; sleep 1d; done"
     container_name: 'run-non-root-alpine'
-    image: 'creemama/run-non-root:1.4.0-alpine-3.9-1'
+    image: 'creemama/run-non-root:1.5.1-alpine'
     read_only: true
     security_opt:
       - no-new-privileges
@@ -21,7 +21,7 @@ services:
     # command: 'ps aux'
     command: -- /bin/sh -c "while :; do echo 'Hit CTRL+C'; sleep 1d; done"
     container_name: 'run-non-root-centos'
-    image: 'creemama/run-non-root:1.4.0-centos-7'
+    image: 'creemama/run-non-root:1.5.1-centos'
     read_only: true
     security_opt:
       - no-new-privileges
@@ -37,7 +37,7 @@ services:
     environment:
       - RUN_NON_ROOT_GID=${RUN_NON_ROOT_GID-}
       - RUN_NON_ROOT_UID=${RUN_NON_ROOT_UID-}
-    image: 'creemama/run-non-root:1.4.0-certbot-0.31.0'
+    image: 'creemama/run-non-root:1.5.1-certbot'
     read_only: true
     security_opt:
       - no-new-privileges
@@ -53,7 +53,7 @@ services:
     build:
       context: ./certbot-renew-cron
     container_name: 'run-non-root-certbot-renew-cron'
-    image: 'creemama/run-non-root:1.4.0-certbot-0.31.0-renew-cron'
+    image: 'creemama/run-non-root:1.5.1-certbot-renew-cron'
     environment:
       - RUN_NON_ROOT_GID=${RUN_NON_ROOT_GID-}
       - RUN_NON_ROOT_UID=${RUN_NON_ROOT_UID-}
@@ -74,7 +74,7 @@ services:
     # command: 'ps aux'
     command: -- /bin/sh -c "while :; do echo 'Hit CTRL+C'; sleep 1d; done"
     container_name: 'run-non-root-debian'
-    image: 'creemama/run-non-root:1.4.0-debian-9.7-1'
+    image: 'creemama/run-non-root:1.5.1-debian'
     read_only: true
     security_opt:
       - no-new-privileges
@@ -88,7 +88,7 @@ services:
     # command: 'ps aux'
     command: -- /bin/sh -c "while :; do echo 'Hit CTRL+C'; sleep 1d; done"
     container_name: 'run-non-root-fedora'
-    image: 'creemama/run-non-root:1.4.0-fedora-29-1'
+    image: 'creemama/run-non-root:1.5.1-fedora'
     read_only: true
     security_opt:
       - no-new-privileges
@@ -105,7 +105,7 @@ services:
       - RUN_NON_ROOT_COMMAND=/bin/sh -c "node --version && while :; do echo 'Hit CTRL+C'; sleep 1d; done"
       - RUN_NON_ROOT_GID=${RUN_NON_ROOT_GID-}
       - RUN_NON_ROOT_UID=${RUN_NON_ROOT_UID-}
-    image: 'creemama/run-non-root:1.4.0-node-10.15.1-2'
+    image: 'creemama/run-non-root:1.5.1-node'
     read_only: true
     security_opt:
       - no-new-privileges
@@ -121,7 +121,7 @@ services:
     # command: 'ps aux'
     command: -- /bin/sh -c "while :; do echo 'Hit CTRL+C'; sleep 1d; done"
     container_name: 'run-non-root-ubuntu'
-    image: 'creemama/run-non-root:1.4.0-ubuntu-18.04'
+    image: 'creemama/run-non-root:1.5.1-ubuntu'
     read_only: true
     security_opt:
       - no-new-privileges
