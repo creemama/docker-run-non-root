@@ -24,7 +24,7 @@ without having to specify a `USER` with hardcoded UIDs and GIDs in our Dockerfil
 
  * [`1.5.1-certbot` *(certbot/Dockerfile)*](https://github.com/creemama/docker-run-non-root/blob/1.5.1/certbot/Dockerfile)
  * [`1.5.1-certbot-renew-cron` *(certbot-renew-cron/Dockerfile)*](https://github.com/creemama/docker-run-non-root/blob/1.5.1/certbot-renew-cron/Dockerfile)
- * [`1.5.1-node` *(node/Dockerfile)*](https://github.com/creemama/docker-run-non-root/blob/1.5.1/node/Dockerfile)
+ * [`1.5.1-node-10.15.3` *(node/Dockerfile)*](https://github.com/creemama/docker-run-non-root/blob/cc2a7a3e804b2ac88e8dd9240e1b9ece7f79e13b/node/Dockerfile)
 
 # run-non-root
 
