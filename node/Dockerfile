@@ -1,6 +1,6 @@
 # https://nodejs.org/en/download/current/
 # https://hub.docker.com/_/node/
-FROM node:10.15.1-alpine
+FROM node:10.15.3-alpine
 
 ##########
 # Start a copy of run-non-root's Alpine Dockerfile.
@@ -38,7 +38,7 @@ RUN printf "%s" "if [ "\$\(whoami\)" = 'root' ]; then printf \"\n\033[1;31m%s\03
 RUN userdel -r node
 
 # https://www.npmjs.com/package/npm
-RUN npm install -g npm@6.8.0
+RUN npm install -g npm@6.9.0
 
 ENV RUN_NON_ROOT_COMMAND sh
 ENV RUN_NON_ROOT_USER node

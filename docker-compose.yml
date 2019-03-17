@@ -105,7 +105,7 @@ services:
       - RUN_NON_ROOT_COMMAND=/bin/sh -c "node --version && while :; do echo 'Hit CTRL+C'; sleep 1d; done"
       - RUN_NON_ROOT_GID=${RUN_NON_ROOT_GID-}
       - RUN_NON_ROOT_UID=${RUN_NON_ROOT_UID-}
-    image: 'creemama/run-non-root:1.5.1-node'
+    image: 'creemama/run-non-root:1.5.1-node-10.15.3'
     read_only: true
     security_opt:
       - no-new-privileges
